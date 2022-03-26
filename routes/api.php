@@ -19,8 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/api', function () {
+    Log::debug('Requested all data.');
     return 'Get All';
 });
 Route::get('/api/{id}', function ($id) {
-  return 'Get '.$id;
+    Log::debug('Requested only one object #'.$id);
+    return 'Get '.$id;
 });
